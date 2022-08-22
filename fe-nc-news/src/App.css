@@ -2,22 +2,35 @@
   text-align: center;
 }
 
+.Nav__button--parent{
+text-align: center;
+}
+
 .Article__list-item-parent{
   text-align: center;
+  padding:0;
 }
 
 .Article__list-item-card {
   list-style: none;
+  border: 1px solid grey;
+  padding: 0 auto;
+}
+
+
+.Topic__list-item-parent{
+  text-align: center;
+  padding: inherit;
 }
 
 @media (max-width: 600px){
   .Article__list-item-card {
     text-align: center;
+    border:1px solid grey;
   }
   ul{
     padding: 0;
   }
-
 }
 
 
