@@ -8,7 +8,6 @@ const ShowAllArticles = () => {
   useEffect(() => {
     fetchAllArticleData().then((dataFromApi) => {
       setAllArticles(dataFromApi);
-      console.log(dataFromApi);
     });
   }, []);
 
