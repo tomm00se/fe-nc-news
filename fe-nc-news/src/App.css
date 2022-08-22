@@ -23,6 +23,16 @@ text-align: center;
   padding: inherit;
 }
 
+.Article-Page__div--parent{
+text-align: center
+}
+
+.Article-Page__body{
+  margin: 0 10%;
+  line-height: 1.6;
+}
+
+
 @media (max-width: 600px){
   .Article__list-item-card {
     text-align: center;
