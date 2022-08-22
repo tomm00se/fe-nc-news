@@ -4,7 +4,7 @@ import TopicNavigation from "./TopicNavigaton";
 const Header = () => {
   return (
     <>
-      <Link to="/news">
+      <Link to="/">
         <div className="Header__title">
           <h1>NC-NEWS</h1>
         </div>

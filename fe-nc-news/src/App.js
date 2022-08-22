@@ -11,7 +11,7 @@ function App() {
       <div className="App"></div>
       <Header />
       <Routes>
-        <Route path="/news" element={<ShowAllArticles />} />
+        <Route path="/" element={<ShowAllArticles />} />
         <Route path="/news/:topic" element={<ShowArticlesByTopic />} />
         <Route path="/news/article/:article_id" element={<ArticlePage />} />
       </Routes>
