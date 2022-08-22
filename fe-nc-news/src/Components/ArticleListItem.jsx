@@ -4,7 +4,9 @@ const ArticleListItem = ({ article }) => {
       <h3>
         {article.title} #{article.article_id}
       </h3>
-      <h4>By: {article.author}</h4>
+      <h4>
+        By: {article.author} - Votes:{article.votes}
+      </h4>
     </li>
   );
 };
