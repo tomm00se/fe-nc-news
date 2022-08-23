@@ -32,6 +32,17 @@ text-align: center
   line-height: 1.6;
 }
 
+ul.Comments__ul--parent {
+  list-style: none;
+  padding: 0;
+}
+
+.Comments__li{
+  border: 1px solid grey;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 
 @media (max-width: 600px){
   .Article__list-item-card {

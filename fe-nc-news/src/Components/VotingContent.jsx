@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { patchVotesInArticleDec, patchVotesInArticleInc } from "../utils/api";
 
 const VotingContent = ({ votes, article_id }) => {

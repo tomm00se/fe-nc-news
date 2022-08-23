@@ -41,3 +41,11 @@ exports.patchVotesInArticleDec = async (article_id) => {
     }
   );
 };
+
+exports.fetchCommentsByArticleId = async (article_id) => {
+  const fetched = await fetch(
+    `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}/comments`
+  );
+  const parsedFetch = fetched.json();
+  return parsedFetch;
+};
