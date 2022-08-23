@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 exports.fetchAllArticleData = async () => {
   const fetched = await fetch(
     "https://mooses-backend-news-project.herokuapp.com/api/articles"
@@ -20,4 +22,22 @@ exports.fetchArticlePageById = async (article_id) => {
   );
   const parsedFetch = fetched.json();
   return parsedFetch;
+};
+
+exports.patchVotesInArticleInc = async (article_id) => {
+  await axios.patch(
+    `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}`,
+    {
+      inc_votes: 1,
+    }
+  );
+};
+
+exports.patchVotesInArticleDec = async (article_id) => {
+  await axios.patch(
+    `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}`,
+    {
+      inc_votes: -1,
+    }
+  );
 };

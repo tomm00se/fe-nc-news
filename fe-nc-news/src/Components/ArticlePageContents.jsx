@@ -1,3 +1,5 @@
+import VotingContent from "./VotingContent";
+
 const ArticlePageContents = ({ articlePage }) => {
   return (
     <div className="Article-Page__div--parent">
@@ -10,7 +12,10 @@ const ArticlePageContents = ({ articlePage }) => {
         Published on: {articlePage.created_at}
       </time>
       <h4 className="Article-Page__topic">Topic: {articlePage.topic}</h4>
-      <h4 className="Article-Page__vote-count">Votes: {articlePage.votes}</h4>
+      <VotingContent
+        votes={articlePage.votes}
+        article_id={articlePage.article_id}
+      />
     </div>
   );
 };

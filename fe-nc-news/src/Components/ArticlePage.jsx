@@ -4,7 +4,7 @@ import { fetchArticlePageById } from "../utils/api";
 import ArticlePageContents from "./ArticlePageContents";
 
 const ArticlePage = () => {
-  const [articlePage, setArticlePage] = useState([]);
+  const [articlePage, setArticlePage] = useState(null);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -12,6 +12,10 @@ const ArticlePage = () => {
       setArticlePage(dataFromApi);
     });
   }, [article_id]);
+
+  if (!articlePage) {
+    return null;
+  }
 
   return <ArticlePageContents articlePage={articlePage} />;
 };
