@@ -25,4 +25,23 @@ Article-Page__topic
 Article-Page__vote-count
 }
 
+Expandable{
+    Comments__div--parent
+    Comments__button
+}
+
+Comments{
+    Commnets__div
+    Comments__ul--parent
+    
+}
+
+CommentListItem{
+    Comments__li
+    Comments__li--author
+    Commnets__li--body
+    Comments__li--timestamp
+    Comments__li--votes
+}
+
 

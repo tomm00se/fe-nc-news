@@ -1,3 +1,5 @@
+import Comments from "./Comments";
+import Expandable from "./Expandable";
 import VotingContent from "./VotingContent";
 
 const ArticlePageContents = ({ articlePage }) => {
@@ -16,6 +18,9 @@ const ArticlePageContents = ({ articlePage }) => {
         votes={articlePage.votes}
         article_id={articlePage.article_id}
       />
+      <Expandable>
+        <Comments article_id={articlePage.article_id} />
+      </Expandable>
     </div>
   );
 };
