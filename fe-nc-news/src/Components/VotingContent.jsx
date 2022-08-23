@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { patchVotesInArticleDec, patchVotesInArticleInc } from "../utils/api";
 
 const VotingContent = ({ votes, article_id }) => {
   const [voteCount, setVoteCount] = useState(votes);
   const [error, setError] = useState(null);
-
-  console.log(voteCount);
+  const [isUpvoteDisabled, setIsUpvoteDisabled] = useState(false);
+  const [isDownvoteDisabled, setIsDownvoteDisabled] = useState(false);
 
   const handleVoteInc = async () => {
     try {
       setVoteCount((currVoteCount) => currVoteCount + 1);
       setError(null);
+      setIsUpvoteDisabled(true);
+      setIsDownvoteDisabled(false);
       await patchVotesInArticleInc(article_id);
     } catch (error) {
       setVoteCount((currVoteCount) => currVoteCount - 1);
@@ -24,6 +26,8 @@ const VotingContent = ({ votes, article_id }) => {
     try {
       setVoteCount((currVoteCount) => currVoteCount - 1);
       setError(null);
+      setIsUpvoteDisabled(false);
+      setIsDownvoteDisabled(true);
       await patchVotesInArticleDec(article_id);
     } catch (error) {
       setVoteCount((currVoteCount) => currVoteCount + 1);
@@ -36,8 +40,12 @@ const VotingContent = ({ votes, article_id }) => {
   return (
     <div>
       <h4>Votes: {voteCount}</h4>
-      <button onClick={handleVoteInc}>Upvote</button>
-      <button onClick={handleVoteDec}>Downvote</button>
+      <button disabled={isUpvoteDisabled} onClick={handleVoteInc}>
+        Upvote
+      </button>
+      <button disabled={isDownvoteDisabled} onClick={handleVoteDec}>
+        Downvote
+      </button>
       <p>{error}</p>
     </div>
   );
