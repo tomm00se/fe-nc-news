@@ -9,6 +9,9 @@ const Header = () => {
           <h1>NC-NEWS</h1>
         </div>
       </Link>
+      <Link to="/users">
+        <button className="Users__button--link-to-users">Users</button>
+      </Link>
       <TopicNavigation />
     </>
   );

@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "../utils/api";
 import CommentsListItem from "./CommentListItem";
+import UserContext from "./contexts/Users";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
+  const { user } = useContext(UserContext);
+
+  console.log(user);
 
   useEffect(() => {
     fetchCommentsByArticleId(article_id).then((dataFromApi) => {

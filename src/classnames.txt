@@ -1,5 +1,6 @@
 Header{
 Header__title
+Users__button--link-to-users
 }
 
 TopicNavigation{
@@ -42,6 +43,12 @@ CommentListItem{
     Commnets__li--body
     Comments__li--timestamp
     Comments__li--votes
+}
+
+ToggleUsers{
+    Users__buttons--content
+    Users__button--username-text
+    Users__button--image
 }
 
 

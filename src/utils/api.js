@@ -49,3 +49,11 @@ exports.fetchCommentsByArticleId = async (article_id) => {
   const parsedFetch = fetched.json();
   return parsedFetch;
 };
+
+exports.fetchAllUsers = async () => {
+  const fetched = await fetch(
+    "https://mooses-backend-news-project.herokuapp.com/api/users"
+  );
+  const parsedFetch = fetched.json();
+  return parsedFetch;
+};
