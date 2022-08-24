@@ -43,6 +43,15 @@ ul.Comments__ul--parent {
   margin-right: 10%;
 }
 
+.Users__button--username-text{
+  text-align: center;
+}
+
+.Users__button--image{
+  max-width: 50px;
+  aspect-ratio: 1/1;
+}
+
 
 @media (max-width: 600px){
   .Article__list-item-card {
