@@ -57,3 +57,16 @@ exports.fetchAllUsers = async () => {
   const parsedFetch = fetched.json();
   return parsedFetch;
 };
+
+exports.postCommentToComments = async (article_id, username, body) => {
+  const response = await axios.post(
+    `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}/comments`,
+    {
+      username,
+      body,
+    }
+  );
+
+  console.log(response.data);
+  return response.data;
+};

@@ -9,7 +9,12 @@ import ShowArticlesByTopic from "./Components/ShowArticlesByTopic";
 import ToggleUsers from "./Components/ToggleUsers";
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({
+    username: "tickle122",
+    name: "Tom Tickle",
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d…r-Tickle-9a.png/revision/latest?cb=20180127221953",
+  });
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

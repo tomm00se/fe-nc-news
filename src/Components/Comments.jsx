@@ -2,12 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "../utils/api";
 import CommentsListItem from "./CommentListItem";
 import UserContext from "./contexts/Users";
+import PostComment from "./PostComment";
 
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
-  const { user } = useContext(UserContext);
-
-  console.log(user);
 
   useEffect(() => {
     fetchCommentsByArticleId(article_id).then((dataFromApi) => {
@@ -15,11 +13,20 @@ const Comments = ({ article_id }) => {
     });
   }, [article_id]);
 
+  const addComment = (newComment) => {
+    setComments([...comments, newComment]);
+  };
+
+  const reversedComments = [...comments].reverse();
+
   return (
     <div className="Commnets__div">
+      <PostComment article_id={article_id} onNewComment={addComment} />
       <ul className="Comments__ul--parent">
-        {comments.map((comment) => {
-          return <CommentsListItem comment={comment} />;
+        {reversedComments.map((comment) => {
+          return (
+            <CommentsListItem key={comment.comment_id} comment={comment} />
+          );
         })}
       </ul>
     </div>
