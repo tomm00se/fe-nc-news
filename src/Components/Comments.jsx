@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchCommentsByArticleId } from "../utils/api";
 import CommentsListItem from "./CommentListItem";
-import UserContext from "./contexts/Users";
 import PostComment from "./PostComment";
 
 const Comments = ({ article_id }) => {

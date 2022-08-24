@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { fetchAllArticleData } from "../utils/api";
 import ArticleListItem from "./ArticleListItem";
 
 const ShowAllArticles = () => {
   const [allArticles, setAllArticles] = useState([]);
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    fetchAllArticleData().then((dataFromApi) => {
+    const sortBy = searchParams.get("sort_by");
+    const order = searchParams.get("order");
+    fetchAllArticleData(sortBy, order).then((dataFromApi) => {
       setAllArticles(dataFromApi);
     });
-  }, []);
+  }, [searchParams]);
 
   return (
     <ul className="Article__list-item-parent">

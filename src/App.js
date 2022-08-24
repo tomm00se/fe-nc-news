@@ -6,6 +6,7 @@ import UserContext from "./Components/contexts/Users";
 import Header from "./Components/Header";
 import ShowAllArticles from "./Components/ShowAllArticles";
 import ShowArticlesByTopic from "./Components/ShowArticlesByTopic";
+import SortBy from "./Components/SortBy";
 import ToggleUsers from "./Components/ToggleUsers";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <BrowserRouter>
         <div className="App"></div>
         <Header />
+        <SortBy />
         <Routes>
           <Route path="/users" element={<ToggleUsers />} />
           <Route path="/" element={<ShowAllArticles />} />
