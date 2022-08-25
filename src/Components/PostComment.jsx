@@ -5,22 +5,29 @@ import UserContext from "./contexts/Users";
 const PostComment = ({ article_id, onNewComment }) => {
   const [commentBody, setCommentBody] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isError, setIsError] = useState(null);
   const { user } = useContext(UserContext);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!commentBody) {
-      return;
+    try {
+      event.preventDefault();
+      if (!commentBody) {
+        return;
+      } else {
+        setIsDisabled(true);
+        const newComment = await postCommentToComments(
+          article_id,
+          user.username,
+          commentBody
+        );
+        setCommentBody("");
+        onNewComment(newComment);
+      }
+    } catch (error) {
+      setIsError(
+        "Oh no!! It looks like you are offline :( Please check your internet connection and try again!"
+      );
     }
-
-    setIsDisabled(true);
-    const newComment = await postCommentToComments(
-      article_id,
-      user.username,
-      commentBody
-    );
-    setCommentBody("");
-    onNewComment(newComment);
     setIsDisabled(false);
   };
 
@@ -40,6 +47,7 @@ const PostComment = ({ article_id, onNewComment }) => {
             onChange={handleOnChange}
           />
         </label>
+        <p>{isError}</p>
         <input type="submit" value="Submit" disabled={isDisabled} />
       </form>
     </div>

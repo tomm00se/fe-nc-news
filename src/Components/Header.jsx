@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import Expandable from "./Expandable";
-import SortBy from "./SortBy";
+import UserContext from "./contexts/Users";
 import TopicNavigation from "./TopicNavigaton";
 
 const Header = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <>
       <Link to="/">
@@ -17,6 +19,9 @@ const Header = () => {
         </Link>
       </div>
       <TopicNavigation />
+      <label>
+        Logged In as: {user.username ? user.username : "Not signed in"}
+      </label>
     </>
   );
 };
