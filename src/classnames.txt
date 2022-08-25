@@ -1,6 +1,20 @@
 Header{
-Header__title
-Users__button--link-to-users
+    Header__title
+    Users__button--link-to-users
+}
+
+SortBy{
+    Sort-by__buttons
+    Sort-by__buttons--date
+    Sort-by__buttons--comment-count
+    Sort-by__buttons--votes
+    Sort-by__buttons--descending
+    Sort-by__buttons--ascending
+}
+
+SortByResult{
+    Sort-by__articles
+    
 }
 
 TopicNavigation{
@@ -17,13 +31,13 @@ UL - Topic__list-item-parent
 }
 
 ArticlePageContents{
-Article-Page__div--parent
-Article-Page__title
-Article-Page__username
-Article-Page__body
-Article-Page__timestamp
-Article-Page__topic
-Article-Page__vote-count
+    Article-Page__div--parent
+    Article-Page__title
+    Article-Page__username
+    Article-Page__body
+    Article-Page__timestamp
+    Article-Page__topic
+    Article-Page__vote-count
 }
 
 Expandable{

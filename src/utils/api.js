@@ -1,8 +1,11 @@
 const { default: axios } = require("axios");
 
-exports.fetchAllArticleData = async () => {
+exports.fetchAllArticleData = async (optionalSortBy, optionalOrder) => {
+  const sortBy = optionalSortBy || "created_at";
+  const order = optionalOrder || "desc";
+
   const fetched = await fetch(
-    "https://mooses-backend-news-project.herokuapp.com/api/articles"
+    `https://mooses-backend-news-project.herokuapp.com/api/articles?sort_by=${sortBy}&order=${order}`
   );
   const parsedFetch = fetched.json();
   return parsedFetch;
@@ -66,7 +69,5 @@ exports.postCommentToComments = async (article_id, username, body) => {
       body,
     }
   );
-
-  console.log(response.data);
   return response.data;
 };

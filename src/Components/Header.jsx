@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Expandable from "./Expandable";
+import SortBy from "./SortBy";
 import TopicNavigation from "./TopicNavigaton";
 
 const Header = () => {
@@ -9,9 +11,11 @@ const Header = () => {
           <h1>NC-NEWS</h1>
         </div>
       </Link>
-      <Link to="/users">
-        <button className="Users__button--link-to-users">Users</button>
-      </Link>
+      <div className="Users__div--button">
+        <Link to="/users">
+          <button className="Users__button--link-to-users">Users</button>
+        </Link>
+      </div>
       <TopicNavigation />
     </>
   );
