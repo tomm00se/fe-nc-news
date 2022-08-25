@@ -16,7 +16,11 @@ const ArticlePage = () => {
 
   console.log(articlePage);
 
-  if (!articlePage || articlePage.msg === "Not Found!") {
+  if (!articlePage) {
+    return null;
+  }
+
+  if (articlePage.msg === "Not Found!") {
     return <ErrorHandler />;
   }
 

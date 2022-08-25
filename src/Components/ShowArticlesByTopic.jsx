@@ -14,7 +14,10 @@ const ShowArticlesByTopic = () => {
     });
   }, [topic]);
 
-  if (!articleByTopic || articleByTopic.msg === "Not Found!") {
+  if (!articleByTopic) {
+    return null;
+  }
+  if (articleByTopic.msg === "Not Found!") {
     return <ErrorHandler />;
   }
 
