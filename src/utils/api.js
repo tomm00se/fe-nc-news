@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 
-exports.fetchAllArticleData = async (optionalSortBy, optionalOrder) => {
+export const fetchAllArticleData = async (optionalSortBy, optionalOrder) => {
   const sortBy = optionalSortBy || "created_at";
   const order = optionalOrder || "desc";
 
@@ -11,7 +11,7 @@ exports.fetchAllArticleData = async (optionalSortBy, optionalOrder) => {
   return parsedFetch;
 };
 
-exports.fetchArticleDataByTopic = async (topic) => {
+export const fetchArticleDataByTopic = async (topic) => {
   const fetched = await fetch(
     `https://mooses-backend-news-project.herokuapp.com/api/articles?topic=${topic}`
   );
@@ -19,7 +19,7 @@ exports.fetchArticleDataByTopic = async (topic) => {
   return parsedFetch;
 };
 
-exports.fetchArticlePageById = async (article_id) => {
+export const fetchArticlePageById = async (article_id) => {
   const fetched = await fetch(
     `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}`
   );
@@ -27,7 +27,7 @@ exports.fetchArticlePageById = async (article_id) => {
   return parsedFetch;
 };
 
-exports.patchVotesInArticleInc = async (article_id) => {
+export const patchVotesInArticleInc = async (article_id) => {
   await axios.patch(
     `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}`,
     {
@@ -36,7 +36,7 @@ exports.patchVotesInArticleInc = async (article_id) => {
   );
 };
 
-exports.patchVotesInArticleDec = async (article_id) => {
+export const patchVotesInArticleDec = async (article_id) => {
   await axios.patch(
     `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}`,
     {
@@ -45,7 +45,7 @@ exports.patchVotesInArticleDec = async (article_id) => {
   );
 };
 
-exports.fetchCommentsByArticleId = async (article_id) => {
+export const fetchCommentsByArticleId = async (article_id) => {
   const fetched = await fetch(
     `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}/comments`
   );
@@ -53,7 +53,7 @@ exports.fetchCommentsByArticleId = async (article_id) => {
   return parsedFetch;
 };
 
-exports.fetchAllUsers = async () => {
+export const fetchAllUsers = async () => {
   const fetched = await fetch(
     "https://mooses-backend-news-project.herokuapp.com/api/users"
   );
@@ -61,7 +61,7 @@ exports.fetchAllUsers = async () => {
   return parsedFetch;
 };
 
-exports.postCommentToComments = async (article_id, username, body) => {
+export const postCommentToComments = async (article_id, username, body) => {
   const response = await axios.post(
     `https://mooses-backend-news-project.herokuapp.com/api/articles/${article_id}/comments`,
     {
@@ -72,7 +72,7 @@ exports.postCommentToComments = async (article_id, username, body) => {
   return response.data;
 };
 
-exports.deleteCommentByCommentId = async (comment_id) => {
+export const deleteCommentByCommentId = async (comment_id) => {
   await axios.delete(
     `https://mooses-backend-news-project.herokuapp.com/api/comments/${comment_id}`
   );

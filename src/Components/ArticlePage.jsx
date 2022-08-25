@@ -9,11 +9,9 @@ const ArticlePage = () => {
   const { article_id } = useParams();
 
   useEffect(() => {
-    async function fetchData() {
-      const dataFromApi = await fetchArticlePageById(article_id);
+    fetchArticlePageById(article_id).then((dataFromApi) => {
       setArticlePage(dataFromApi);
-    }
-    fetchData();
+    });
   }, [article_id]);
 
   if (!articlePage) {
