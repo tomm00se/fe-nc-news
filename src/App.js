@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ArticlePage from "./Components/ArticlePage";
 import UserContext from "./Components/contexts/Users";
+import ErrorHandler from "./Components/ErrorHandler";
 import Header from "./Components/Header";
 import ShowAllArticles from "./Components/ShowAllArticles";
 import ShowArticlesByTopic from "./Components/ShowArticlesByTopic";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<ShowAllArticles />} />
           <Route path="/news/:topic" element={<ShowArticlesByTopic />} />
           <Route path="/news/article/:article_id" element={<ArticlePage />} />
+          <Route path="/*" element={<ErrorHandler />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

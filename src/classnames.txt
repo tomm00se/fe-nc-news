@@ -3,6 +3,13 @@ Header{
     Users__button--link-to-users
 }
 
+ErrorHandler{
+    Error-Handler__div--parent
+    Error-Handler__heading
+    Error-handler__image
+    Error-Handler__link
+}
+
 SortBy{
     Sort-by__buttons
     Sort-by__buttons--date

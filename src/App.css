@@ -56,6 +56,11 @@ ul.Comments__ul--parent {
   margin-right: 10%;
 }
 
+.Error-handler__image{
+  max-width: 60%;
+  max-height: 60%;
+}
+
 
 @media (max-width: 600px){
   .Article__list-item-card {

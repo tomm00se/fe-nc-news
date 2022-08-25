@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticleDataByTopic } from "../utils/api";
 import ArticleListItem from "./ArticleListItem";
+import ErrorHandler from "./ErrorHandler";
 
 const ShowArticlesByTopic = () => {
   const [articleByTopic, setArticleByTopic] = useState([]);
@@ -12,6 +13,10 @@ const ShowArticlesByTopic = () => {
       setArticleByTopic(queriedDataFromApi);
     });
   }, [topic]);
+
+  if (!articleByTopic || articleByTopic.msg === "Not Found!") {
+    return <ErrorHandler />;
+  }
 
   return (
     <ul className="Topic__list-item-parent">
