@@ -10,6 +10,7 @@ const SortBy = () => {
 
   return (
     <div className="Sort-by__buttons">
+      <label>Sort by:</label>
       <button onClick={() => replaceSearchParam("sort_by", "created_at")}>
         Date
       </button>

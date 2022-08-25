@@ -17,9 +17,6 @@ const Header = () => {
         </Link>
       </div>
       <TopicNavigation />
-      <Expandable>
-        <SortBy />
-      </Expandable>
     </>
   );
 };
