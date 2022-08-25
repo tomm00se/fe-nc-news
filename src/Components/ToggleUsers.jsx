@@ -16,18 +16,20 @@ const ToggleUsers = () => {
     <div className="Users__buttons--content">
       {users.map((user) => {
         return (
-          <button key={user.username} onClick={() => setUser(user)}>
-            <section>
-              <p className="Users__button--username-text">
-                <img
-                  className="Users__button--image"
-                  src={user.avatar_url}
-                  alt={user.username}
-                />
-                {user.username}
-              </p>
-            </section>
-          </button>
+          <>
+            <button key={user.username} onClick={() => setUser(user)}>
+              <section>
+                <p className="Users__button--username-text">
+                  <img
+                    className="Users__button--image"
+                    src={user.avatar_url}
+                    alt={user.username}
+                  />
+                  {user.username}
+                </p>
+              </section>
+            </button>
+          </>
         );
       })}
     </div>

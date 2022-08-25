@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchCommentsByArticleId } from "../utils/api";
 import CommentsListItem from "./CommentListItem";
 import UserContext from "./contexts/Users";
@@ -31,6 +32,12 @@ const Comments = ({ article_id }) => {
   return (
     <div className="Commnets__div">
       <PostComment article_id={article_id} onNewComment={addComment} />
+      {!user.username ? (
+        <p>
+          Oops, It looks like you're not signed in! Please sign in{" "}
+          <Link to="/users">here.</Link>
+        </p>
+      ) : null}
       <ul className="Comments__ul--parent">
         {reversedComments.map((comment) => {
           return (
