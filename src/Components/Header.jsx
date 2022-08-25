@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Expandable from "./Expandable";
-import SortBy from "./SortBy";
 import TopicNavigation from "./TopicNavigaton";
 
 const Header = () => {

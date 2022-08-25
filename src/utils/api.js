@@ -71,3 +71,10 @@ exports.postCommentToComments = async (article_id, username, body) => {
   );
   return response.data;
 };
+
+exports.deleteCommentByCommentId = async (comment_id) => {
+  const response = await axios.delete(
+    `https://mooses-backend-news-project.herokuapp.com/api/comments/${comment_id}`
+  );
+  console.log(response, "DELETED");
+};
