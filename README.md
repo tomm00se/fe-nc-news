@@ -42,6 +42,7 @@ If you would like to run this repo locally:
 1. Fork and Clone -`git clone <insert-forked-url>`
 2. Run - `Create-react-app` in the root file
 3. Install dependancies - `npm install`
+4. Have fun!
 
 ## Socials
 
