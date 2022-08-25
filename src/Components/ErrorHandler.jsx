@@ -10,7 +10,11 @@ const ErrorHandler = () => {
           home!
         </Link>
       </h2>
-      <img className="Error-handler__image" src="https://http.cat/404" />
+      <img
+        className="Error-handler__image"
+        src="https://http.cat/404"
+        alt="404 Error Message"
+      />
     </div>
   );
 };
@@ -25,7 +29,11 @@ export const ErrorHandler400 = () => {
           home!
         </Link>
       </h2>
-      <img className="Error-handler__image" src="https://http.cat/400" />
+      <img
+        className="Error-handler__image"
+        src="https://http.cat/400"
+        alt="400 Error Message"
+      />
     </div>
   );
 };

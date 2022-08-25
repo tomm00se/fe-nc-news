@@ -14,7 +14,7 @@ const ArticlePage = () => {
       setArticlePage(dataFromApi);
     }
     fetchData();
-  }, []);
+  }, [article_id]);
 
   if (!articlePage) {
     return null;
