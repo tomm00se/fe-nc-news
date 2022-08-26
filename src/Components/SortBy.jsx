@@ -8,40 +8,42 @@ const SortBy = () => {
     setSearchParams(searchParams);
   };
 
-  return (
-    <div className="Sort-by__buttons">
-      <label className="Sort-by__label">Sort by:</label>
-      <button
-        className="Sort-by__buttons--date"
-        onClick={() => replaceSearchParam("sort_by", "created_at")}
-      >
-        Date
-      </button>
-      <button
-        className="Sort-by__buttons--comment-count"
-        onClick={() => replaceSearchParam("sort_by", "comment_count")}
-      >
-        Comment Count
-      </button>
-      <button
-        className="Sort-by__buttons--votes"
-        onClick={() => replaceSearchParam("sort_by", "votes")}
-      >
-        Votes
-      </button>
+  const handleSortChange = (event) => {
+    replaceSearchParam("sort_by", event.target.value);
+  };
 
-      <button
-        className="Sort-by__buttons--descending"
-        onClick={() => replaceSearchParam("order", "desc")}
+  const handleOrderChange = (event) => {
+    replaceSearchParam("order", event.target.value);
+  };
+
+  return (
+    <div className="Sort-by__container">
+      <label htmlFor="Sort-by" className="Sort-by__label">
+        Sort by:
+      </label>
+
+      <select
+        className="Sort-by__dropdown-select"
+        id="Sort-by"
+        onChange={handleSortChange}
       >
-        Descending
-      </button>
-      <button
-        className="Sort-by__buttons--ascending"
-        onClick={() => replaceSearchParam("order", "asc")}
+        <option value="created_at">Date</option>
+        <option value="comment_count">Comment Count</option>
+        <option value="votes">Votes</option>
+      </select>
+
+      <label htmlFor="Order-by" className="Sort-by__label">
+        Order by:
+      </label>
+
+      <select
+        className="Sort-by__dropdown-select"
+        id="Order-by"
+        onChange={handleOrderChange}
       >
-        Ascending
-      </button>
+        <option value="desc">Descending</option>
+        <option value="asc">Ascending</option>
+      </select>
     </div>
   );
 };

@@ -38,15 +38,16 @@ const PostComment = ({ article_id, onNewComment }) => {
   return (
     <div className="Comment__input-form--div">
       <form className="Comment__input-form--form_box" onSubmit={handleSubmit}>
-        <label className="Comment__input-form--label">
+        <label className="Comment__input-form--label" htmlFor="comment">
           Comment:
-          <input
-            type="text"
-            value={commentBody}
-            disabled={isDisabled}
-            onChange={handleOnChange}
-          />
         </label>
+        <textarea
+          id="comment"
+          type="text"
+          value={commentBody}
+          disabled={isDisabled}
+          onChange={handleOnChange}
+        />
         <p className="Comment__input-form--error">{isError}</p>
         <input
           className="Comment__input-form--submit-button"

@@ -1,5 +1,13 @@
+App{
+    App
+    App__page
+}
+
 Header{
+    Header__container--all
+    Header__title--link
     Header__title
+    Header__container
     Users__div--button
     Users__button--link-to-users
     Header__users--label
@@ -13,13 +21,9 @@ Header{
 }
 
 SortBy{
-    Sort-by__buttons
+    Sort-by__container
     Sort-by__label
-    Sort-by__buttons--date
-    Sort-by__buttons--comment-count
-    Sort-by__buttons--votes
-    Sort-by__buttons--descending
-    Sort-by__buttons--ascending
+    Sort-by__dropdown-select
 }
 
 
@@ -38,6 +42,7 @@ ShowArticleByTopic{
     Topic__list-item-parent
 
     ArticleListItem{
+        Article__list-item-card--link
         Article__list-item-card
         Article__heading--title-id
         Article__sub-heading--author-votes
@@ -56,6 +61,7 @@ ArticlePageContents{
     VotingContent{
         Article-Page__vote-count--div
         Article-Page__vote-count--h4
+        Article-Page__vote-count--button-container
         Article-Page__vote-count-button--upvote
         Article-Page__vote-count-button--downvote
         Article-page__vote-count-error
@@ -68,6 +74,7 @@ ArticlePageContents{
         Comments{
             Commnets__div
             Comments__ul--parent
+            Comment__input-form--label
 
             CommentListItem{
                 Comments__li

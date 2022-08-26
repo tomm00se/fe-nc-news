@@ -40,20 +40,22 @@ const VotingContent = ({ votes, article_id }) => {
   return (
     <div className="Article-Page__vote-count--div">
       <h4 className="Article-Page__vote-count--h4">Votes: {voteCount}</h4>
-      <button
-        className="Article-Page__vote-count-button--upvote"
-        disabled={isUpvoteDisabled}
-        onClick={handleVoteInc}
-      >
-        Upvote
-      </button>
-      <button
-        className="Article-Page__vote-count-button--downvote"
-        disabled={isDownvoteDisabled}
-        onClick={handleVoteDec}
-      >
-        Downvote
-      </button>
+      <div className="Article-Page__vote-count--button-container">
+        <button
+          className="Article-Page__vote-count-button--upvote"
+          disabled={isUpvoteDisabled}
+          onClick={handleVoteInc}
+        >
+          Upvote
+        </button>
+        <button
+          className="Article-Page__vote-count-button--downvote"
+          disabled={isDownvoteDisabled}
+          onClick={handleVoteDec}
+        >
+          Downvote
+        </button>
+      </div>
       <p className="Article-page__vote-count-error">{error}</p>
     </div>
   );

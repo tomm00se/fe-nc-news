@@ -16,8 +16,12 @@ const ToggleUsers = () => {
     <div className="Users__buttons--content">
       {users.map((user) => {
         return (
-          <>
-            <button key={user.username} onClick={() => setUser(user)}>
+          <div>
+            <button
+              className="Users__buttons--button-style"
+              key={user.username}
+              onClick={() => setUser(user)}
+            >
               <section className="Users__button--section">
                 <p className="Users__button--username-text">
                   <img
@@ -29,7 +33,7 @@ const ToggleUsers = () => {
                 </p>
               </section>
             </button>
-          </>
+          </div>
         );
       })}
     </div>

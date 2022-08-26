@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 
 const ArticleListItem = ({ article }) => {
   return (
-    <Link to={`/news/article/${article.article_id}`}>
+    <Link
+      className="Article__list-item-card--link"
+      to={`/news/article/${article.article_id}`}
+    >
       <li className="Article__list-item-card">
         <h3 className="Article__heading--title-id">
           {article.title} #{article.article_id}

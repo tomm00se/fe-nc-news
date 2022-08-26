@@ -23,7 +23,6 @@ function App() {
       <BrowserRouter>
         <div className="App"></div>
         <Header />
-        <SortBy />
         <Routes>
           <Route path="/users" element={<ToggleUsers />} />
           <Route path="/" element={<ShowAllArticles />} />
