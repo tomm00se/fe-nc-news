@@ -10,21 +10,36 @@ const SortBy = () => {
 
   return (
     <div className="Sort-by__buttons">
-      <label>Sort by:</label>
-      <button onClick={() => replaceSearchParam("sort_by", "created_at")}>
+      <label className="Sort-by__label">Sort by:</label>
+      <button
+        className="Sort-by__buttons--date"
+        onClick={() => replaceSearchParam("sort_by", "created_at")}
+      >
         Date
       </button>
-      <button onClick={() => replaceSearchParam("sort_by", "comment_count")}>
+      <button
+        className="Sort-by__buttons--comment-count"
+        onClick={() => replaceSearchParam("sort_by", "comment_count")}
+      >
         Comment Count
       </button>
-      <button onClick={() => replaceSearchParam("sort_by", "votes")}>
+      <button
+        className="Sort-by__buttons--votes"
+        onClick={() => replaceSearchParam("sort_by", "votes")}
+      >
         Votes
       </button>
 
-      <button onClick={() => replaceSearchParam("order", "desc")}>
+      <button
+        className="Sort-by__buttons--descending"
+        onClick={() => replaceSearchParam("order", "desc")}
+      >
         Descending
       </button>
-      <button onClick={() => replaceSearchParam("order", "asc")}>
+      <button
+        className="Sort-by__buttons--ascending"
+        onClick={() => replaceSearchParam("order", "asc")}
+      >
         Ascending
       </button>
     </div>

@@ -19,7 +19,7 @@ const Header = () => {
         </Link>
       </div>
       <TopicNavigation />
-      <label>
+      <label className="Header__users--label">
         Logged In as: {user.username ? user.username : "Not signed in"}
       </label>
     </>

@@ -18,7 +18,7 @@ const ToggleUsers = () => {
         return (
           <>
             <button key={user.username} onClick={() => setUser(user)}>
-              <section>
+              <section className="Users__button--section">
                 <p className="Users__button--username-text">
                   <img
                     className="Users__button--image"

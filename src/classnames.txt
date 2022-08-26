@@ -1,17 +1,20 @@
 Header{
     Header__title
+    Users__div--button
     Users__button--link-to-users
-}
+    Header__users--label
 
-ErrorHandler{
-    Error-Handler__div--parent
-    Error-Handler__heading
-    Error-handler__image
-    Error-Handler__link
+        TopicNavigation{
+            Nav__button--parent
+            Nav__button--child
+            Nav__button--child
+            Nav__button--child
+        }
 }
 
 SortBy{
     Sort-by__buttons
+    Sort-by__label
     Sort-by__buttons--date
     Sort-by__buttons--comment-count
     Sort-by__buttons--votes
@@ -19,22 +22,27 @@ SortBy{
     Sort-by__buttons--ascending
 }
 
-SortByResult{
-    Sort-by__articles
-    
+
+PostComment{
+    Comment__input-form--div
+    Comment__input-form--form_box
+    Comment__input-form--label
+    Comment__input-form--error
+    Comment__input-form--submit-button
 }
 
-TopicNavigation{
-Nav__button--parent
-}
-
-ArticleListItem{
-UL - Article__list-item-parent
-LI - Article__list-item-card
-}
+ShowAllArticles{
+    Article__ul--list-item-parent
 
 ShowArticleByTopic{
-UL - Topic__list-item-parent
+    Topic__list-item-parent
+
+    ArticleListItem{
+        Article__list-item-card
+        Article__heading--title-id
+        Article__sub-heading--author-votes
+    }
+  }
 }
 
 ArticlePageContents{
@@ -44,30 +52,58 @@ ArticlePageContents{
     Article-Page__body
     Article-Page__timestamp
     Article-Page__topic
-    Article-Page__vote-count
+
+    VotingContent{
+        Article-Page__vote-count--div
+        Article-Page__vote-count--h4
+        Article-Page__vote-count-button--upvote
+        Article-Page__vote-count-button--downvote
+        Article-page__vote-count-error
+    }
+
+    Expandable{
+        Comments__div--parent
+        Comments__button
+
+        Comments{
+            Commnets__div
+            Comments__ul--parent
+
+            CommentListItem{
+                Comments__li
+                Comments__li--author
+                Commnets__li--body
+                Comments__li--timestamp
+                Comments__li--votes
+            }
+
+            DeleteComment{
+                DeleteComments__div
+                DeleteComments__button
+                DeleteComments_error
+            }
+
+        }
+    }
 }
 
-Expandable{
-    Comments__div--parent
-    Comments__button
+ErrorHandler{
+    Error-Handler__div--parent
+    Error-Handler__heading
+    Error-Handler__link
+    Error-handler__image
 }
 
-Comments{
-    Commnets__div
-    Comments__ul--parent
-    
-}
-
-CommentListItem{
-    Comments__li
-    Comments__li--author
-    Commnets__li--body
-    Comments__li--timestamp
-    Comments__li--votes
+ErrorHandler400{
+    Error-Handler__div--parent
+    Error-Handler__heading
+    Error-handler__image
+    Error-Handler__link
 }
 
 ToggleUsers{
     Users__buttons--content
+    Users__button--section
     Users__button--username-text
     Users__button--image
 }

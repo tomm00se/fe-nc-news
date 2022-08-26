@@ -22,11 +22,15 @@ const DeleteComment = ({ comment_id, deleteComment }) => {
   };
 
   return (
-    <div>
-      <button disabled={isDisabled} onClick={handleDeleteClick}>
+    <div className="DeleteComments__div">
+      <button
+        className="DeleteComments__button"
+        disabled={isDisabled}
+        onClick={handleDeleteClick}
+      >
         Delete this comment!
       </button>
-      <p>{isError}</p>
+      <p className="DeleteComments_error">{isError}</p>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Expandable = ({ children }) => {
   return (
     <div className="Comments__div--parent">
       <button onClick={toggleOpen} className="Comments__button">
-        {isOpen ? "Hide Section" : "Show Section"}
+        {isOpen ? "Hide Comments" : "Show Comments"}
       </button>
       {isOpen ? children : null}
     </div>

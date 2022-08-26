@@ -36,9 +36,9 @@ const PostComment = ({ article_id, onNewComment }) => {
   };
 
   return (
-    <div className="Comment__input-form">
-      <form onSubmit={handleSubmit}>
-        <label>
+    <div className="Comment__input-form--div">
+      <form className="Comment__input-form--form_box" onSubmit={handleSubmit}>
+        <label className="Comment__input-form--label">
           Comment:
           <input
             type="text"
@@ -47,8 +47,13 @@ const PostComment = ({ article_id, onNewComment }) => {
             onChange={handleOnChange}
           />
         </label>
-        <p>{isError}</p>
-        <input type="submit" value="Submit" disabled={isDisabled} />
+        <p className="Comment__input-form--error">{isError}</p>
+        <input
+          className="Comment__input-form--submit-button"
+          type="submit"
+          value="Submit"
+          disabled={isDisabled}
+        />
       </form>
     </div>
   );

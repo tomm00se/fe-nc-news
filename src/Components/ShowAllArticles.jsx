@@ -16,7 +16,7 @@ const ShowAllArticles = () => {
   }, [searchParams]);
 
   return (
-    <ul className="Article__list-item-parent">
+    <ul className="Article__ul--list-item-parent">
       {allArticles.map((article) => {
         return <ArticleListItem article={article} key={article.article_id} />;
       })}
