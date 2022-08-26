@@ -7,7 +7,6 @@ import ErrorHandler from "./Components/ErrorHandler";
 import Header from "./Components/Header";
 import ShowAllArticles from "./Components/ShowAllArticles";
 import ShowArticlesByTopic from "./Components/ShowArticlesByTopic";
-import SortBy from "./Components/SortBy";
 import ToggleUsers from "./Components/ToggleUsers";
 
 function App() {
